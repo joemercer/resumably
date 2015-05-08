@@ -5,6 +5,18 @@
 <div class="list-group-item">
   <form class="form-horizontal">
 
+    <div class="form-group">
+      <div class="col-xs-4">
+        <input type="text" class="form-control" ng-model="newProperty.key" />
+      </div>
+      <div class="col-xs-6">
+        <input type="text" class="form-control" ng-model="newProperty.value" />
+      </div>
+      <div class="col-xs-2">
+        <button class="btn btn-default btn-sm" ng-click="addNewProperty()">Add</button>
+      </div>
+    </div>
+
     <div ng-repeat="(key, value) in newItem.data" class="form-group">
       <label for="{{key}}" class="col-xs-2 control-label">{{key}}</label>
       <div class="col-xs-10">
@@ -12,14 +24,7 @@
       </div>
     </div>
 
-    <div class="form-group">
-      <div class="col-xs-4">
-        <input type="text" class="form-control" id="{{key}}" ng-model="newProperty.key" />
-      </div>
-      <div class="col-xs-8">
-        <input type="text" class="form-control" id="{{key}}" ng-model="newProperty.value" />
-      </div>
-    </div>
+    <button class="btn btn-default btn-lg" ng-click="addNewItem()">Add</button>
 
   </form>
 

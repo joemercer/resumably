@@ -11,6 +11,7 @@ angular.module('resumablyApp')
   .controller('MainCtrl', function ($scope, db) {
 
     $scope.db = db._db;
+    $scope.readableData = $scope.db;
 
 		$scope.newItem = {
 			tags: [],
@@ -21,10 +22,29 @@ angular.module('resumablyApp')
 		};
 
 		$scope.newProperty = {
-			key: 'key',
-			value: 'value'
+			key: 'location',
+			value: 'San Francisco'
 		};
 
-		$scope.readableData = $scope.db;
+		$scope.addNewProperty = function() {
+			$scope.newItem.data[$scope.newProperty.key] = $scope.newProperty.value;
+
+			$scope.newProperty = {
+				key: 'startDate',
+				value: 'September 2014'
+			};
+		};
+
+		$scope.addNewItem = function() {
+			$scope.db.push($scope.newItem);
+
+			$scope.newItem = {
+				tags: [],
+				data: {
+					company: 'Bazaarvoice',
+	    		position: 'Software Engineer'
+				}
+			};
+		};
 
   });
