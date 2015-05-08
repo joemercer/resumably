@@ -14,7 +14,15 @@ angular.module('resumablyApp')
 
 		$scope.newItem = {
 			tags: [],
-			data: {}
+			data: {
+				company: 'Tagged',
+    		position: 'Software Engineer'
+			}
+		};
+
+		$scope.newProperty = {
+			key: 'key',
+			value: 'value'
 		};
 
 		$scope.readableData = $scope.db;
