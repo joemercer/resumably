@@ -11,16 +11,12 @@ angular.module('resumablyApp')
   .controller('MainCtrl', function ($scope, db) {
 
     $scope.db = db._db;
-		// let the db service be in charge of
-		// notifying the view when it has data
-		db.onInitialized = function() {
-			$scope.$apply();
-		};
 
 		$scope.newItem = {
-			content: ''
+			tags: [],
+			data: {}
 		};
 
-
+		$scope.readableData = $scope.db;
 
   });

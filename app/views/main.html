@@ -18,18 +18,19 @@
 
 <ul class="list-group">
   <li ng-repeat="item in db" class="list-group-item">
+    <form class="form-horizontal">
 
-    <div ng-repeat="(key, value) in item.data">
-      <label for="{{key}}" class="control-label">{{key}}</label>
-      <input type="text" class="form-control" id="{{key}}" ng-model="db[$parent.$index].data[key]" />
-    </div>
+      <div ng-repeat="(key, value) in item.data" class="form-group">
+        <label for="{{key}}" class="col-xs-2 control-label">{{key}}</label>
+        <div class="col-xs-10">
+          <input type="text" class="form-control" id="{{key}}" ng-model="db[$parent.$index].data[key]" />
+        </div>
+      </div>
 
-    <h3>{{item.data.company}}</h3>
-    <!-- <button ng-click="complete(todo)" class="todo-do-btn btn btn-default pull-left">done</button>
-    <button ng-click="snooze(todo)" class="todo-snooze-btn btn btn-default pull-right">snooze</button>
-    <h4 contenteditable ng-model="todo.content" 
-    strip-br="true" required 
-    ng-keydown="update($event, todo)" 
-    ng-class="'todo-content'"></h4> -->
+    </form>
   </li>
 </ul>
+
+<hr>
+
+<p>{{readableData}}</p>
