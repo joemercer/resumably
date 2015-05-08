@@ -1,0 +1,35 @@
+
+
+<br>
+
+<div class="list-group-item">
+
+  <input type="text" ng-model="newItem.content" />
+
+  <p>{{newItem.content}}</p>
+
+  <!-- <h4 contenteditable ng-model="newTodo.content"
+    strip-br="true" required 
+    ng-keydown="addNewTodo($event)" 
+    ng-class="'todo-content add-new-todo'"></h4> -->
+</div>
+
+<br>
+
+<ul class="list-group">
+  <li ng-repeat="item in db" class="list-group-item">
+
+    <div ng-repeat="(key, value) in item.data">
+      <label for="{{key}}" class="control-label">{{key}}</label>
+      <input type="text" class="form-control" id="{{key}}" ng-model="db[$parent.$index].data[key]" />
+    </div>
+
+    <h3>{{item.data.company}}</h3>
+    <!-- <button ng-click="complete(todo)" class="todo-do-btn btn btn-default pull-left">done</button>
+    <button ng-click="snooze(todo)" class="todo-snooze-btn btn btn-default pull-right">snooze</button>
+    <h4 contenteditable ng-model="todo.content" 
+    strip-br="true" required 
+    ng-keydown="update($event, todo)" 
+    ng-class="'todo-content'"></h4> -->
+  </li>
+</ul>
