@@ -10,7 +10,7 @@
 angular.module('resumablyApp')
   .service('db', function () {
 
-    this._db = [{"tags":["experience","pm"],"ranking":1500,"timeAdded":1431285777121,"timeUpdated":1431285777121,"data":{"company":"Microsoft","position":"Program Manager","location":"Redmond"}}];
+    this._db = [{"tags":["resume","experience","pm"],"ranking":1500,"timeAdded":1431285777121,"timeUpdated":1431285777121,"data":{"company":"Microsoft","position":"Program Manager","location":"Redmond"}}];
 
     this.push = function(data, tags) {
     	var self = this;

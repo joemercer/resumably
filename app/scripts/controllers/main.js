@@ -17,7 +17,7 @@ angular.module('resumablyApp')
   	// ## query the database
 
   	// holds the user's query into db
-  	$scope.query = '';
+  	$scope.query = 'resume';
 
   	// pull tags out of the query
   	$scope.queryTags = function(){
