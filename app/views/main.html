@@ -1,4 +1,9 @@
 
+<br>
+
+<div class="list-group-item">
+  <input type="text" class="form-control" ng-model="query"/>
+</div>
 
 <br>
 
@@ -32,13 +37,13 @@
 <br>
 
 <ul class="list-group">
-  <li ng-repeat="item in db" class="list-group-item">
+  <li ng-repeat="item in db()" class="list-group-item">
     <form class="form-horizontal">
 
       <div ng-repeat="(key, value) in item.data" class="form-group">
         <label for="{{key}}" class="col-xs-2 control-label">{{key}}</label>
         <div class="col-xs-10">
-          <input type="text" class="form-control" id="{{key}}" ng-model="db[$parent.$index].data[key]" />
+          <input type="text" class="form-control" id="{{key}}" ng-model="db()[$parent.$index].data[key]" />
         </div>
       </div>
 

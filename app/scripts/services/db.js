@@ -16,4 +16,22 @@ angular.module('resumablyApp')
 
     };
 
+    this.pull = function(tags) {
+    	var self = this;
+
+    	if (!tags.length) {
+    		return self._db;
+    	}
+
+    	return self._db.filter(function(item){
+    		// item must contain at least one of the tags
+    		var sum = false;
+    		for (var i=0; i<tags.length; ++i) {
+    			sum = sum || (item.tags.indexOf(tags[0]) > -1);
+    		}
+    		return sum;
+    	});
+
+    };
+
   });
