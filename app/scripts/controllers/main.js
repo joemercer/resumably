@@ -36,15 +36,10 @@ angular.module('resumablyApp')
 
 
     // ## add new items to the database
-    // !!! need to use .push
-
 
 		$scope.newItem = {
-			tags: [],
-			data: {
-				company: 'Tagged',
-    		position: 'Software Engineer'
-			}
+			company: 'Tagged',
+  		position: 'Software Engineer'
 		};
 
 		$scope.newProperty = {
@@ -53,7 +48,7 @@ angular.module('resumablyApp')
 		};
 
 		$scope.addNewProperty = function() {
-			$scope.newItem.data[$scope.newProperty.key] = $scope.newProperty.value;
+			$scope.newItem[$scope.newProperty.key] = $scope.newProperty.value;
 
 			$scope.newProperty = {
 				key: 'startDate',
@@ -62,14 +57,11 @@ angular.module('resumablyApp')
 		};
 
 		$scope.addNewItem = function() {
-			$scope.db.push($scope.newItem);
+			db.push($scope.newItem, $scope.queryTags());
 
 			$scope.newItem = {
-				tags: [],
-				data: {
-					company: 'Bazaarvoice',
-	    		position: 'Software Engineer'
-				}
+				company: 'Bazaarvoice',
+	    	position: 'Software Engineer'
 			};
 		};
 
